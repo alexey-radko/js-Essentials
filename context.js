@@ -22,8 +22,10 @@ function sayHello() {
 // in function bind we can put any context we want
 
 person.logInfo.bind(newPerson)('nurse');
+
 // gives the same result
-// the method bind returns a function
+// the method bind returns a FUNCTION !!!!!!!!!!!!!!!!
+
 const fnLogInfo = person.logInfo.bind(newPerson, 'nurse');
 fnLogInfo();
 
