@@ -1,0 +1,60 @@
+const users = [
+    {id: 1, name: "Leanne Graham", username: "Bret", email: "Sincere@april.biz" , budget: 1000 },
+     {id: 2, name: "Ervin Howell", username: "Antonette", email: "Shanna@melissa.tv", budget: 1400 },
+     {id: 3, name: "Clementine Bauch", username: "Samantha", email: "Nathan@yesenia.net", budget: 200 },
+     {id: 4, name: "Patricia Lebsack", username: "Karianne", email: "Julianne.OConner@kory.org" , budget: 5000},
+     {id: 5, name: "Chelsey Dietrich", username: "Kamren", email: "Lucio_Hettinger@annie.ca" , budget: 100},
+     {id: 6, name: "Mrs. Dennis Schulist", username: "Leopoldo_Corkery", email: "Karley_Dach@jasper.info", budget: 600}
+
+]
+
+// forOf
+// for (const user of users) {
+//     console.log(user)
+// }
+
+// forEach here you can also get the access on index
+// users.forEach((user, index) => console.log(user))
+
+// Map, returns a new array, is good to change some values and return them as a new array
+const people = users.map(user => {
+    // return user.name
+    // return `${user.name} ${user.budget}`
+    return user.budget+= 100
+
+})
+
+
+// Filter, returns a new filtered array depended on the condition
+const reachPeople = users.filter(user =>  user.budget > 1000)
+
+// reduce, allows us to get a final result, total per default is 0
+const sum = users.reduce((total, user)=>
+    // total is equal = 0
+    total += user.budget, 0);
+
+// find
+const patricia  = users.find(user => user.name == 'Patricia Lebsack')
+
+
+// find Index
+
+const patriciaIndex = users.findIndex(user => user.name == 'Patricia Lebsack')
+
+console.log(people)
+console.log(reachPeople)
+console.log(sum)
+console.log('found person: ',patricia)
+console.log('found person index: ',patriciaIndex)
+
+
+//##############################
+const newPeople =
+users
+    .filter(user => user.budget > 1000)
+    .map(user => { return  {
+        person: user,
+        info: 'This pearson must pay more tax'}})
+
+
+console.log(newPeople)
